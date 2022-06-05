@@ -1,7 +1,6 @@
 package com.example.flowershop.service;
 
 import com.example.flowershop.entity.Flower;
-import com.example.flowershop.entity.Review;
 import com.example.flowershop.repository.FlowerRepository;
 import com.example.flowershop.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +22,9 @@ public class FlowerService {
 
     public Flower getFlowerById(Long id) {
         return flowerRepository.findById(id).orElse(null);
+    }
+
+    public void createFlower(Flower flower) {
+        flowerRepository.save(flower);
     }
 }

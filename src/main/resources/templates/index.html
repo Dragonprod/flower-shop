@@ -90,7 +90,7 @@
                         industry's standard dummy text ever since
                       </p>
                       <div>
-                        <a href="">Buy Now</a>
+                        <a href="#gallery">Buy Now</a>
                       </div>
                     </div>
                   </div>
@@ -122,7 +122,7 @@
                         industry's standard dummy text ever since
                       </p>
                       <div>
-                        <a href="">Buy Now</a>
+                        <a href="#gallery">Buy Now</a>
                       </div>
                     </div>
                   </div>
@@ -189,8 +189,8 @@
         <h2>Our Gallery</h2>
       </div>
       <div class="container">
-        <div class="row" th:each="flower : ${flowers}">
-            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4" th:each="flower : ${flowers}">
               <div class="card">
                 <img class="card-img" th:src="${flower.photoUrl}" alt="flower-photo">
                 <div class="card-body">
@@ -218,8 +218,8 @@
         </div>
       </div>
       <div class="container">
-        <div class="row" th:each="review : ${reviews}">
-          <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6" th:each="review : ${reviews}">
             <div class="client_box">
               <div class="detail_box">
                 <div class="img_box">
@@ -235,7 +235,7 @@
     </section>
 
     <!-- contact section -->
-    <section sec:authorize="hasAuthority('ROLE_USER')" id="contact" class="contact_section layout_padding">
+    <section sec:authorize="isAuthenticated()" id="contact" class="contact_section layout_padding">
       <div class="container">
         <div class="heading_container justify-content-center">
           <h2 class="">Contact Us</h2>
@@ -252,7 +252,7 @@
                 <input type="text" name="text" class="message-box" placeholder="Message" />
               </div>
               <div class="d-flex mt-4">
-                <button>SEND</button>
+                <button>Send</button>
               </div>
             </form>
           </div>
